@@ -13,14 +13,15 @@ data  Visualization 9/27
           ['Date','grape(2kg)', 'apple(10kg)', 'banana(13kg)','kiwi(10kg)'],
           ['day ago', 13000, 27000, 30600, 41600],
           ['week ago', 12400, 28200, 30600,41600],
-          ['month ago', 11920, 44320, 24800,40400]
+          ['month ago', 11920, 44320, 24800,40400],
+          ['mean year', 9837, 37922, 28190,43267]
         ]);
         var view = new google.visualization.DataView(data);
           view.setColumns([0, 1,
                        { calc: "stringify",
                          sourceColumn: 1,
                          type: "string",
-                         role: "annotation", },
+                         role: "annotation" },
                        2,
                        { calc: "stringify",
                          sourceColumn: 2,
@@ -42,13 +43,12 @@ data  Visualization 9/27
             title: 'Volume (USD)'
           },
           hAxis: {
-            title: 'Time'
+            title: 'Time',
           },
           legend: {
             position: 'bottom'
           }
         };
-
         var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
         chart1.draw(view, options1);
       }
@@ -69,4 +69,3 @@ data  Visualization 9/27
     <div id="chart_div1" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
   </body>
 </html>
-
